@@ -1,21 +1,18 @@
+import { loginAsAdmin } from '../helpers/loginAsAdmin';
 const { test, expect } = require('@playwright/test');
 
 test('Update Equb group as admin', async ({ page }) => {
   // Login as admin
-  await page.goto('http://localhost:3000/login');
-  await page.fill('#phone', '932013310');
-  await page.fill('#password', 'SecurePass123!');
-  await page.click('button[type="submit"]');
-  await expect(page).toHaveURL('http://localhost:3000/home');
-
+  await loginAsAdmin(page)
+  await expect(page).toHaveURL(/home/);
   // Go to Equbs list
   await page.click('a[href="/equbs"]');
   await expect(page).toHaveURL('http://localhost:3000/equbs');
 
   // Find the row for the Equb group to update
-  const targetRow = page.locator('table tbody tr').filter({ hasText: 'Test Equb Group' }).first();
-  await expect(targetRow).toBeVisible();
-
+  const targetRow = page.locator('table tbody tr').filter({ hasText: 'Unique Test Equb Group' }).first();
+  // Wait for the row to be visible
+  await expect(targetRow).toBeVisible({ timeout: 10000 });
 
 
 // Open the 3-dot menu
@@ -43,14 +40,8 @@ test('Update Equb group as admin', async ({ page }) => {
 
 test('Validation: cannot update Equb after start date', async ({ page }) => {
   // Login as admin
-  await page.goto('http://localhost:3000/login');
-  await page.fill('#phone', '932013310');
-  await page.fill('#password', 'SecurePass123!');
-  await page.click('button[type="submit"]');
-
-  // Wait for navigation to home
+   await loginAsAdmin(page)
   await expect(page).toHaveURL(/home/);
-
   // Navigate to Equbs page
   await page.click('a[href="/equbs"]');
   await expect(page).toHaveURL(/equbs/);

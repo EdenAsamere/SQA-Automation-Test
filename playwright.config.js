@@ -1,9 +1,11 @@
-const { defineConfig } = require('@playwright/test');
+import { defineConfig } from '@playwright/test';
 
-module.exports = defineConfig({
-  testDir: 'tests',
+export default defineConfig({
   use: {
-    browserName: 'chromium',
     headless: true,
+    screenshot: 'on', // or 'on' to always take screenshots
+    video: 'retain-on-failure',    // or 'on' to always record video
+    trace: 'retain-on-failure',    // for rich debugging info
   },
+  reporter: [['html', { open: 'never' }]], // generate HTML report
 });
