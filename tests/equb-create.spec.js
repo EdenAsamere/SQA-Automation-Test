@@ -8,7 +8,7 @@ test('Create a new Equb group', async ({ page }) => {
   await expect(page).toHaveURL(/home/);
   // Navigate to Equbs page
   await page.click('a[href="/equbs"]');
-  await expect(page).toHaveURL('http://localhost:3000/equbs');
+  await expect(page).toHaveURL('https://final-project-f45e.onrender.com/equbs');
 
   // Start group creation
   await page.click('button:has-text("Create New Equb")');

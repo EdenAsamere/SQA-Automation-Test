@@ -7,7 +7,7 @@ test('Update Equb group as admin', async ({ page }) => {
   await expect(page).toHaveURL(/home/);
   // Go to Equbs list
   await page.click('a[href="/equbs"]');
-  await expect(page).toHaveURL('http://localhost:3000/equbs');
+  await expect(page).toHaveURL('https://final-project-f45e.onrender.com/equbs');
 
   // Find the row for the Equb group to update
   const targetRow = page.locator('table tbody tr').filter({ hasText: 'Unique Test Equb Group' }).first();

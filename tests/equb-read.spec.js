@@ -5,7 +5,7 @@ const { test, expect } = require('@playwright/test');
 test('Read Equb groups - list displays correctly', async ({ page }) => {
   await loginAsAdmin(page)
   await expect(page).toHaveURL(/home/);
-  await page.goto('http://localhost:3000/equbs');
+  await page.goto('https://final-project-f45e.onrender.com/equbs');
   await expect(page.locator('table')).toBeVisible();
 
   const rows = page.locator('table tbody tr');

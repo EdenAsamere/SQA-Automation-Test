@@ -8,7 +8,7 @@ test('Search Equb groups by name', async ({ page }) => {
   await expect(page).toHaveURL(/home/);
   // Navigate to Equb groups page
   await page.click('a[href="/equbs"]');
-  await expect(page).toHaveURL('http://localhost:3000/equbs');
+  await expect(page).toHaveURL('https://final-project-f45e.onrender.com/equbs');
 
   // Type into search box
   const searchInput = page.getByPlaceholder('Search Equbs by name...');
