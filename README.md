@@ -4,7 +4,7 @@
 This repository contains automated test scripts developed using Playwright for our Equb Management Web Application. The project was completed as part of our Quality Assurance and Software Testing course.
 
 ## Features Tested
-- User Login & Registration
+- User Login 
 - Equb CRUD Operations (Create, Read, Update, Delete)
 - UI Element Interactions (forms, buttons, modals)
 - Join Request Approval & Rejection Workflow
