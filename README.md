@@ -17,10 +17,12 @@ This repository contains automated test scripts developed using Playwright for o
 ## Purpose
 To validate the core functionalities of the Equb system, ensure stability of the user interface, and improve overall software reliability through automation.
 
-## Members
-Bezawit Assaye					UGR/7129/13
-Eden Asamere						UGR/7759/13	
-Hiwot Beyene						UGR/3774/13
-Sitra Mohammed				  UGR/0106/13
+| Name            | ID           |
+|-----------------|--------------|
+| Bezawit Assaye  | UGR/7129/13  |
+| Eden Asamere    | UGR/7759/13  |
+| Hiwot Beyene    | UGR/3774/13  |
+| Sitra Mohammed  | UGR/0106/13  |
+
 
 
