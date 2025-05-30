@@ -1,4 +1,3 @@
-# SQA-Automation-Test
 
 # SQA-Automation-Test
 
